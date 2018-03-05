@@ -28,7 +28,7 @@ var DEFAULT_SCHEMA = {
   key: Joi.string().required().description('the key to get url')
 };
 
-var defineUrl = function defineUrl(params) {
+var defineUri = function defineUri(params) {
   return ('\n    https://s3-' + params.region + '.amazonaws.com/' + params.bucket + '/' + params.key + '\n  ').trim();
 };
 
@@ -41,12 +41,13 @@ function S3UrlExists(options) {
   }
 
   return new Promise(function (resolve, reject) {
+    var uri = defineUri(params);
     return (0, _requestPromise2.default)({
       method: 'GET',
-      uri: defineUrl(params),
+      uri: uri,
       resolveWithFullResponse: true
     }).then(function (response) {
-      resolve({ status: response.statusCode === 200 });
+      resolve({ status: response.statusCode === 200, url: uri });
     }).catch(function (err) {
       return reject({ status: false, message: err });
     });
