@@ -7,20 +7,20 @@ const DEFAULT_PICK_FIELDS = [
   'key'
 ]
 const DEFAULT_SCHEMA = {
-    bucket: Joi.string()
-      .required()
-      .description('the bucket to get url'),
+  bucket: Joi.string()
+    .required()
+    .description('the bucket to get url'),
 
-    region: Joi.string()
-      .required()
-      .description('the region to get url'),
+  region: Joi.string()
+    .required()
+    .description('the region to get url'),
 
-    key: Joi.string()
-      .required()
-      .description('the key to get url')
+  key: Joi.string()
+    .required()
+    .description('the key to get url')
 }
 
-const defineUrl = (params) => { 
+const defineUri = (params) => {
   return `
     https://s3-${params.region}.amazonaws.com/${params.bucket}/${params.key}
   `.trim()
@@ -35,12 +35,13 @@ export default function S3UrlExists (options) {
   }
 
   return new Promise((resolve, reject) => {
+    const uri = defineUri(params)
     return Request({
       method: 'GET',
-      uri: defineUrl(params),
+      uri,
       resolveWithFullResponse: true
     }).then((response) => {
-      resolve({ status: response.statusCode === 200  })
+      resolve({ status: response.statusCode === 200, url: uri })
     })
     .catch(err => reject({ status: false, message: err }))
   })
