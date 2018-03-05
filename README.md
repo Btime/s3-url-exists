@@ -18,7 +18,7 @@ const options = {
 S3UrlExists(options)
   .then((result) => {
     /*
-    * { status: true }
+    * { status: true, url: 'https://s3-region.amazonaws.com/bucket-name/file-name' }
     */
   })
   .catch(err => {
