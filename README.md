@@ -1,4 +1,4 @@
-# seneca-merge-validate
+# S3-URL-EXISTS
 
 ![npm](https://img.shields.io/badge/npm-v5.6.1-blue.svg) ![yarn](https://img.shields.io/badge/yarn-v1.3.2-blue.svg) ![node](https://img.shields.io/badge/node-v8.9.0-brightgreen.svg) ![babel](https://img.shields.io/badge/babel-v6.26.0-red.svg)
 
