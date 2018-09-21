@@ -1,12 +1,19 @@
 # S3-URL-EXISTS
 
-![npm](https://img.shields.io/badge/npm-v5.6.1-blue.svg) ![yarn](https://img.shields.io/badge/yarn-v1.3.2-blue.svg) ![node](https://img.shields.io/badge/node-v8.9.0-brightgreen.svg) ![babel](https://img.shields.io/badge/babel-v6.26.0-red.svg)
+![npm](https://img.shields.io/badge/npm-v5.6.1-blue.svg) ![node](https://img.shields.io/badge/node-v8.9.0-brightgreen.svg)
 
 ## About
 
-S3 Url Exists is an abstraction package made to check if the key into the buckets is really exists and are public
+S3 Url Exists is an abstraction package made to check if the key into the buckets really exist and it's public
 
-## Example
+### Usage
+
+```bash
+$ npm i Btime/s3-url-exists -S
+```
+
+### Example
+
 ```js
 const S3UrlExists = require('s3-url-exists')
 const options = {
@@ -26,4 +33,17 @@ S3UrlExists(options)
     * Request Error
     */
   })
+```
+
+## Tests
+
+- Create `.env` file:
+
+```bash
+$ cp .env .env.dist
+```
+
+- Run tests:
+```bash
+$ npm test
 ```

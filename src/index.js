@@ -1,6 +1,6 @@
-import * as Joi from 'joi'
-import { pick } from 'lodash'
-import Request from 'request-promise'
+const Joi = require('joi')
+const { pick } = require('lodash')
+const Request = require('request-promise')
 const DEFAULT_PICK_FIELDS = [
   'bucket',
   'region',
@@ -26,7 +26,7 @@ const defineUri = (params) => {
   `.trim()
 }
 
-export default function S3UrlExists (options) {
+module.exports.default = function S3UrlExists (options) {
   const params = pick(options, DEFAULT_PICK_FIELDS)
   const isValid = Joi.validate(params, DEFAULT_SCHEMA)
 
@@ -41,8 +41,8 @@ export default function S3UrlExists (options) {
       uri,
       resolveWithFullResponse: true
     }).then((response) => {
-      resolve({ status: response.statusCode === 200, url: uri })
+      return resolve({ status: response.statusCode === 200, url: uri })
     })
-    .catch(err => reject({ status: false, message: err }))
+      .catch(err => reject({ status: false, message: err }))
   })
 }
