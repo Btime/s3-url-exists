@@ -8,7 +8,6 @@
   },
   "scripts": {
     "test": "mocha test/*.test.js --exit --timeout 555555",
-    "coverage": "nyc mocha --timeout 555555",
     "fixStyle": "./node_modules/eslint/bin/eslint.js ./ --fix"
   },
   "husky": {
@@ -34,7 +33,8 @@
   "homepage": "https://github.com/Btime/s3-url-exists.git#readme",
   "dependencies": {
     "dotenv": "^6.0.0",
-    "joi": "^8.4.1",
+    "error-messages": "github:Btime/error-messages#master",
+    "@hapi/joi": "^15.0.3",
     "lodash": "^4.13.1",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
