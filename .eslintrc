@@ -70,6 +70,82 @@
       "error",
       "module.exports"
     ],
-    "prefer-promise-reject-errors": "off"
+    "promise/no-callback-in-promise": "off",
+    "promise/no-nesting": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "tabWidth": 2,
+        "comments": 100,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    "max-lines": [
+      "error",
+      {
+        "max": 350,
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "complexity": [
+      "error",
+      {
+        "max": 20
+      }
+    ],
+    "prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": false,
+        "allowUnboundThis": true
+      }
+    ],
+    "arrow-parens": [
+      2,
+      "as-needed"
+    ],
+    "dot-notation": [
+      "error",
+      {
+        "allowKeywords": true
+      }
+    ],
+    "require-atomic-updates": "error",
+    "no-regex-spaces": "error",
+    "no-template-curly-in-string": "error",
+    "no-unreachable": "error",
+    "no-return-await": "error",
+    "no-return-assign": "error",
+    "no-unused-expressions": "error",
+    "no-useless-return": "error",
+    "no-throw-literal": "error",
+    "handle-callback-err": "error",
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false,
+        "afterColon": true,
+        "mode": "strict"
+      }
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-trailing-spaces": "error",
+    "no-whitespace-before-property": "error",
+    "no-unneeded-ternary": "error",
+    "prefer-object-spread": "error",
+    "array-callback-return": "error",
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ]
   }
 }

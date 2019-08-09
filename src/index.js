@@ -8,11 +8,9 @@ const DEFAULT_PICK_FIELDS = [
   'key'
 ]
 
-const defineUri = (params) => {
-  return `
+const defineUri = params => `
     https://s3-${params.region}.amazonaws.com/${params.bucket}/${params.key}
   `.trim()
-}
 
 module.exports.default = async function S3UrlExists (options) {
   const params = pick(options, DEFAULT_PICK_FIELDS)
@@ -24,9 +22,7 @@ module.exports.default = async function S3UrlExists (options) {
     method: 'GET',
     uri,
     resolveWithFullResponse: true
-  }).then((response) => {
-    return { status: response.statusCode === 200, url: uri }
-  })
+  }).then(response => ({ status: response.statusCode === 200, url: uri }))
     .catch(errs => {
       const err = { status: false, errors: defineErr(errs) }
       throw err
