@@ -9,7 +9,7 @@ S3 Url Exists is an abstraction package made to check if the key into the bucket
 ### Usage
 
 ```bash
-$ npm i Btime/s3-url-exists -S
+$ npm i Btime/s3-url-exists#semver:^1 -S
 ```
 
 ### Example

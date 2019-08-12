@@ -1,6 +1,6 @@
 {
   "name": "s3-url-exists",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Check if URL exists in S3",
   "main": "index.js",
   "engines": {
