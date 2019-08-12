@@ -23,18 +23,8 @@ module.exports.default = async function S3UrlExists (options) {
     uri,
     resolveWithFullResponse: true
   }).then(response => ({ status: response.statusCode === 200, url: uri }))
-    .catch(errs => {
-      const err = { status: false, errors: defineErr(errs) }
+    .catch(errors => {
+      const err = { status: false, errors }
       throw err
     })
-}
-
-function defineErr (err) {
-  if (!err.errors && Array.isArray(err)) return err
-
-  if (!err.errors && !Array.isArray(err)) return [ err ]
-
-  return Array.isArray(err.errors)
-    ? err.errors
-    : [ err.errors ]
 }

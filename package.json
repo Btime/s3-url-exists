@@ -40,7 +40,7 @@
   "homepage": "https://github.com/Btime/s3-url-exists.git#readme",
   "dependencies": {
     "dotenv": "^6.0.0",
-    "error-messages": "github:Btime/error-messages#master",
+    "error-messages": "github:Btime/error-messages#semver:^1",
     "@hapi/joi": "^15.0.3",
     "lodash": "^4.13.1",
     "request": "^2.83.0",
