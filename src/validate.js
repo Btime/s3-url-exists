@@ -24,10 +24,9 @@ module.exports.validate = params => {
     const err = {
       status: false,
       errors: defineErrorMessages({
-        code: '',
-        entity: 'joi',
-        joi: isValid.error.details,
-        entityErr: 'internal'
+        serviceValidator: 'joi',
+        serviceName: 'internal',
+        joiErrors: isValid.error.details
       })
     }
     throw err

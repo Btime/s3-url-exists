@@ -18,7 +18,13 @@ describe('S3 Url Exists Package Test', () => {
       expect(err.status).to.equal(false)
       expect(Array.isArray(err.errors)).to.equal(true)
       expect(err.errors[0].code).to.equal('ITN-503')
+      expect(typeof err.errors[0].path).to.equal('string')
+      expect(err.errors[0].path).to.equal('bucket')
       expect(typeof err.errors[0].message).to.equal('string')
+      expect(err.errors[1].code).to.equal('ITN-503')
+      expect(typeof err.errors[1].path).to.equal('string')
+      expect(err.errors[1].path).to.equal('region')
+      expect(typeof err.errors[1].message).to.equal('string')
     }
   })
 

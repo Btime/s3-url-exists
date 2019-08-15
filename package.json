@@ -1,6 +1,6 @@
 {
   "name": "s3-url-exists",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check if URL exists in S3",
   "main": "index.js",
   "engines": {
@@ -40,7 +40,7 @@
   "homepage": "https://github.com/Btime/s3-url-exists.git#readme",
   "dependencies": {
     "dotenv": "^6.0.0",
-    "error-messages": "github:Btime/error-messages#semver:^1",
+    "error-messages": "github:Btime/error-messages#semver:^2",
     "@hapi/joi": "^15.0.3",
     "lodash": "^4.13.1",
     "request": "^2.83.0",
