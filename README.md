@@ -35,6 +35,20 @@ S3UrlExists(options)
   })
 ```
 
+### Pushing versions - SemVer
+
+All pushes must come with a new tag. The tag usage must consider semantic versions.
+
+`[major version: incompatible changes].[minor version: compatible with major].[patch version: bug fixes]`
+
+Before pushing each version, type:
+
+- For patch changes: `npm version patch`
+- For minor changes: `npm version minor`
+- For major changes: `npm version major`
+
+**The version set must also be set in `package.json` file, at `version` field.**
+
 ## Tests
 
 - Create `.env` file:
