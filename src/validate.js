@@ -26,7 +26,8 @@ module.exports.validate = params => {
       errors: defineErrorMessages({
         serviceValidator: 'joi',
         serviceName: 'internal',
-        joiErrors: isValid.error.details
+        joiErrors: isValid.error.details,
+        ...(params.lang && { lang: params.lang })
       })
     }
     throw err
